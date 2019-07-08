@@ -7,7 +7,7 @@ import React from "react";
 import FilterLink from "../containers/FilterLink";
 import { VisibilityFilters } from "../ducks/visibilityFilter";
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <div>
     <span>Show: </span>
     <FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>

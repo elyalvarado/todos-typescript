@@ -8,18 +8,16 @@
 // ✅ Delete the propTypes
 
 import React from "react";
-import PropTypes from "prop-types";
 
-const Link = ({ active, children, onClick }) => (
+interface ILinkProps {
+  active: boolean;
+  children: React.ReactNode;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+const Link: React.FC<ILinkProps> = ({ active, children, onClick }) => (
   <button onClick={onClick} disabled={active} style={{ marginLeft: "4px" }}>
     {children}
   </button>
 );
-
-Link.propTypes = {
-  active: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
-};
 
 export default Link;
