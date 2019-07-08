@@ -1,15 +1,15 @@
-import todos from './todos'
+import reducer, * as actions from './todos'
 
 describe('todos reducer', () => {
   it('should handle initial state', () => {
     expect(
-      todos(undefined, {})
+      reducer(undefined, {})
     ).toEqual([])
   })
 
   it('should handle ADD_TODO', () => {
     expect(
-      todos([], {
+      reducer([], {
         type: 'ADD_TODO',
         text: 'Run the tests',
         id: 0
@@ -23,7 +23,7 @@ describe('todos reducer', () => {
     ])
 
     expect(
-      todos([
+      reducer([
         {
           text: 'Run the tests',
           completed: false,
@@ -47,7 +47,7 @@ describe('todos reducer', () => {
     ])
 
     expect(
-      todos([
+      reducer([
         {
           text: 'Run the tests',
           completed: false,
@@ -81,7 +81,7 @@ describe('todos reducer', () => {
 
   it('should handle TOGGLE_TODO', () => {
     expect(
-      todos([
+      reducer([
         {
           text: 'Run the tests',
           completed: false,
@@ -107,5 +107,21 @@ describe('todos reducer', () => {
       }
     ])
   })
+})
 
+describe('todos actions', () => {
+  it('addTodo should create ADD_TODO action', () => {
+    expect(actions.addTodo('Use Redux')).toEqual({
+      type: 'ADD_TODO',
+      id: 0,
+      text: 'Use Redux'
+    })
+  })
+
+  it('toggleTodo should create TOGGLE_TODO action', () => {
+    expect(actions.toggleTodo(1)).toEqual({
+      type: 'TOGGLE_TODO',
+      id: 1
+    })
+  })
 })
