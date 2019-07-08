@@ -10,7 +10,7 @@ import React from "react";
 import Todo from "./Todo";
 import { ITodo } from "../ducks/todos";
 
-interface ITodoListProps {
+export interface ITodoListProps {
   todos: ITodo[];
   toggleTodo: (id: number) => void;
 }

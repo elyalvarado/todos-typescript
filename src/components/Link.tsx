@@ -9,7 +9,7 @@
 
 import React from "react";
 
-interface ILinkProps {
+export interface ILinkProps {
   active: boolean;
   children: React.ReactNode;
   onClick: React.MouseEventHandler<HTMLButtonElement>;

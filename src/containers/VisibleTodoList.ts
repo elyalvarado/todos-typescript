@@ -9,12 +9,16 @@
 // 🚀 Change the code to use the MapStateToProps and MapDispatchToProps
 //    generic types from react-redux
 
-import { connect } from "react-redux";
-import { toggleTodo } from "../ducks/todos";
-import TodoList from "../components/TodoList";
+import { connect, MapDispatchToProps, MapStateToProps } from "react-redux";
+import { ITodo, toggleTodo } from "../ducks/todos";
+import TodoList, { ITodoListProps } from "../components/TodoList";
 import { VisibilityFilters } from "../ducks/visibilityFilter";
+import { IGlobalState } from "../ducks";
 
-const getVisibleTodos = (todos, filter) => {
+const getVisibleTodos = (
+  todos: ITodo[],
+  filter: VisibilityFilters
+): ITodo[] => {
   switch (filter) {
     case VisibilityFilters.SHOW_ALL:
       return todos;
@@ -27,11 +31,18 @@ const getVisibleTodos = (todos, filter) => {
   }
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps: MapStateToProps<
+  Pick<ITodoListProps, "todos">,
+  {},
+  IGlobalState
+> = state => ({
   todos: getVisibleTodos(state.todos, state.visibilityFilter)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps: MapDispatchToProps<
+  Pick<ITodoListProps, "toggleTodo">,
+  {}
+> = dispatch => ({
   toggleTodo: id => dispatch(toggleTodo(id))
 });
 

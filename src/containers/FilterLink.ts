@@ -9,15 +9,29 @@
 // 🚀 Change the code to use the MapStateToProps and MapDispatchToProps
 //    generic types from react-redux
 
-import { connect } from "react-redux";
-import { setVisibilityFilter } from "../ducks/visibilityFilter";
-import Link from "../components/Link";
+import { connect, MapDispatchToProps, MapStateToProps } from "react-redux";
+import {
+  setVisibilityFilter,
+  VisibilityFilters
+} from "../ducks/visibilityFilter";
+import Link, { ILinkProps } from "../components/Link";
+import { IGlobalState } from "../ducks";
 
-const mapStateToProps = (state, ownProps) => ({
+interface IFilterLinkProps {
+  filter: VisibilityFilters;
+}
+const mapStateToProps: MapStateToProps<
+  Pick<ILinkProps, "active">,
+  IFilterLinkProps,
+  IGlobalState
+> = (state, ownProps) => ({
   active: ownProps.filter === state.visibilityFilter
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps: MapDispatchToProps<
+  Pick<ILinkProps, "onClick">,
+  IFilterLinkProps
+> = (dispatch, ownProps) => ({
   onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
 });
 

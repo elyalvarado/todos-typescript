@@ -12,20 +12,24 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../ducks/todos";
+import { Dispatch } from "redux";
 
-const AddTodo = ({ dispatch }) => {
-  let input;
+interface IAddTodoProps {
+  dispatch: Dispatch;
+}
+const AddTodo: React.FC<IAddTodoProps> = ({ dispatch }) => {
+  let input: HTMLInputElement | null;
 
   return (
     <div>
       <form
         onSubmit={e => {
           e.preventDefault();
-          if (!input.value.trim()) {
+          if (!input!.value.trim()) {
             return;
           }
-          dispatch(addTodo(input.value));
-          input.value = "";
+          dispatch(addTodo(input!.value));
+          input!.value = "";
         }}
       >
         <input ref={node => (input = node)} />
