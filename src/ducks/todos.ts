@@ -9,6 +9,8 @@
 // 🚀 Use the Reducer type from redux to type the reducer function (hint:
 //    it uses the type with state shape
 
+import { Reducer } from "redux";
+
 let nextTodoId = 0;
 
 // Actions
@@ -16,18 +18,24 @@ const ADD_TODO = "ADD_TODO";
 const TOGGLE_TODO = "TOGGLE_TODO";
 
 // Action Creators
-export const addTodo = text => ({
+export const addTodo = (text: string) => ({
   type: ADD_TODO,
   id: nextTodoId++,
   text
 });
-export const toggleTodo = id => ({
+export const toggleTodo = (id: number) => ({
   type: TOGGLE_TODO,
   id
 });
 
 // Reducer
-const reducer = (state = [], action) => {
+export interface ITodo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+export type TodosState = ITodo[];
+const reducer: Reducer<TodosState> = (state = [], action) => {
   switch (action.type) {
     case ADD_TODO:
       return [

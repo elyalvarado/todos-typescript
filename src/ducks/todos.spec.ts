@@ -7,7 +7,7 @@ import reducer, * as actions from "./todos";
 
 describe("todos reducer", () => {
   it("should handle initial state", () => {
-    expect(reducer(undefined, {})).toEqual([]);
+    expect(reducer(undefined, { type: "Any" })).toEqual([]);
   });
 
   it("should handle ADD_TODO", () => {

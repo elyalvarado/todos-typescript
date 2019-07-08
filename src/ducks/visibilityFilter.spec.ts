@@ -10,7 +10,9 @@ import reducer, {
 
 describe("visibilityFilter reducer", () => {
   it("should handle initial state", () => {
-    expect(reducer(undefined, {})).toEqual(VisibilityFilters.SHOW_ALL);
+    expect(reducer(undefined, { type: "Any" })).toEqual(
+      VisibilityFilters.SHOW_ALL
+    );
   });
 
   it("should handle SET_VISIBILITY_FILTER", () => {
@@ -32,9 +34,9 @@ describe("visibilityFilter reducer", () => {
 
 describe("visibilityFilter actions", () => {
   it("setVisibilityFilter should create SET_VISIBILITY_FILTER action", () => {
-    expect(setVisibilityFilter("active")).toEqual({
+    expect(setVisibilityFilter(VisibilityFilters.SHOW_ACTIVE)).toEqual({
       type: "SET_VISIBILITY_FILTER",
-      filter: "active"
+      filter: VisibilityFilters.SHOW_ACTIVE
     });
   });
 });
