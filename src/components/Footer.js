@@ -1,3 +1,8 @@
+// Migrate this file to typescript:
+//
+// ✅ Rename the file using the typescript extension
+// ✅ Use the right type information from React for the component
+
 import React from "react";
 import FilterLink from "../containers/FilterLink";
 import { VisibilityFilters } from "../ducks/visibilityFilter";

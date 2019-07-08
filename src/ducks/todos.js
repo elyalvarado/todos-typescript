@@ -1,3 +1,14 @@
+// Migrate this file to typescript:
+//
+// ✅ Rename the file using the typescript extension
+// ✅ Create and export an interface with the shape of a To-do
+// ✅ Fix the function signatures (hint: use an interface for the action)
+//
+// 💎💎💎 Bonus 💎💎💎
+// 🚀 Export a type with the shape of the to-do state
+// 🚀 Use the Reducer type from redux to type the reducer function (hint:
+//    it uses the type with state shape
+
 let nextTodoId = 0;
 
 // Actions

@@ -1,3 +1,8 @@
+// Migrate this file to typescript:
+//
+// ✅ Rename the file using the typescript extension
+// ✅ Fix the errors shown by the compiler
+
 import reducer, {
   setVisibilityFilter,
   VisibilityFilters

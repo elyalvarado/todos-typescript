@@ -1,3 +1,11 @@
+// Migrate this file to typescript:
+//
+// ✅ Rename the file using the typescript extension
+// ✅ Define and interface for the To-do list props
+//    (hint: that interface for the to-do might be useful here)
+// ✅ Use the right type information from React for the component
+// ✅ Delete the propTypes
+
 import React from "react";
 import PropTypes from "prop-types";
 import Todo from "./Todo";
