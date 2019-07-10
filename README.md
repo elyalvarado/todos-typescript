@@ -19,32 +19,35 @@ After running the command you should end up with something similar to branch [01
 ### 2. Migrate ducks
 
 The suggested order for the ducks migration is:
-a. `src/ducks/todos.js`
-a. `src/ducks/todos.spec.js`
-a. `src/ducks/visibilityFilter.js`
-a. `src/ducks/visibilityFilter.spec.js`
-a. `src/ducks/index.js`
+
+1. `src/ducks/todos.js`
+1. `src/ducks/todos.spec.js`
+1. `src/ducks/visibilityFilter.js`
+1. `src/ducks/visibilityFilter.spec.js`
+1. `src/ducks/index.js`
 
 After migrating the files you should end up with something very much like what is in branch [02-migrate-ducks](https://github.com/elyalvarado/todos-typescript/tree/02-migrate-ducks)
 
 ### 3. Migrate components
 
 The suggested order for migrating the component files is:
-a. `src/components/Footer.js`
-a. `src/components/App.js`
-a. `src/components/Link.js`
-a. `src/components/Todo.js`
-a. `src/components/TodoList.js`
+
+1. `src/components/Footer.js`
+1. `src/components/App.js`
+1. `src/components/Link.js`
+1. `src/components/Todo.js`
+1. `src/components/TodoList.js`
 
 After migrating the files you should end up with something very much like what is in branch [03-migrate-components](https://github.com/elyalvarado/todos-typescript/tree/03-migrate-components)
 
 ### 4. Migrate containers
 
 The suggested order is:
-a. `src/containers/AddTodo.js`
-a. `src/containers/FilterLink.js`
-a. `src/containers/VisibleTodoList.js`
-a. `src/index.js`
+
+1. `src/containers/AddTodo.js`
+1. `src/containers/FilterLink.js`
+1. `src/containers/VisibleTodoList.js`
+1. `src/index.js`
 
 After migrating the files you should end up with something very much like what is in branch [04-migrate-containers](https://github.com/elyalvarado/todos-typescript/tree/04-migrate-containers)
 
